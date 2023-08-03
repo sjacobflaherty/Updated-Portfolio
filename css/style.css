@@ -2723,7 +2723,7 @@ input[type='checkbox'] {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
-  left: 0%;
+  left: -10%;
   z-index: 1;
   border-radius: 50%;
   text-decoration: none;
@@ -2739,15 +2739,15 @@ input[type='checkbox'] {
   transition: all 0.2s ease;
 }
 .btn-link:hover .btn-block {
-  left: 60%;
+  left: 70%;
   text-decoration: none;
 }
 .animation-bounce {
-  -webkit-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -moz-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -o-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  -ms-transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  transition: all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -o-transition: all 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -ms-transition: all 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 700ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 .btn-block.color1 {
   background-color: transparent;
