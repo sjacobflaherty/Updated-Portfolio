@@ -2991,3 +2991,12 @@ input[type='checkbox'] {
     display: none;
   }
 }
+
+.iconify {
+  filter: invert(0); /* Default color, assuming it's black */
+  transition: filter 0.3s ease; /* Transition effect */
+}
+
+.iconify:hover {
+  filter: invert(1); /* Invert colors on hover, making it white */
+}

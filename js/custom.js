@@ -576,7 +576,7 @@
 
     // Cursor Conditions
     $(
-      '.services .owl-theme .item, .portfolio .owl-theme .item, .testimonials .item, .gallery-item .item'
+      '.services .item, .owl-theme .item, .portfolio .owl-theme .item, .testimonials .item, .gallery-item .item'
     ).hover(function () {
       $('.cursor').toggleClass('drag');
       $('.cursor').toggleClass('visible');
