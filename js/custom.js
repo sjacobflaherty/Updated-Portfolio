@@ -190,10 +190,13 @@
 
   // Services owlCarousel
   $('.services .owl-carousel').owlCarousel({
+    animateOut: 'slideOutDown',
+    animateIn: 'flipInX',
     loop: true,
     margin: 10,
     mouseDrag: true,
     autoplay: false,
+    autoplayTimeout: 5000,
     dots: false,
     autoplayHoverPause: true,
     nav: false,
@@ -221,7 +224,7 @@
     margin: 15,
     mouseDrag: true,
     autoplay: false,
-    dots: false,
+    dots: true,
     nav: false,
     navText: [
       "<span class='lnr ti-angle-left'></span>",
@@ -630,3 +633,12 @@ $(function () {
 });
 
 //Passes a footer to each html with <passFooter></passFooter>
+
+$(function () {
+  $('.owl-carousel').owlCarousel({
+    autoplay: true,
+    autoplayTimeout: 3000, //3 seconds, adjust as needed
+    loop: true,
+    // any other options you want to add
+  });
+});

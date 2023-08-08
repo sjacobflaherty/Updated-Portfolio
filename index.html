@@ -287,7 +287,7 @@
                 <a href="portfolio-page.html">
                   <div class="img-block">
                     <div class="wrapper-img">
-                      <img src="images/portfolio/1-new.jpg" class="img-fluid" />
+                      <img src="images/portfolio/1.jpg" class="img-fluid" />
                     </div>
                     <div class="title-block">
                       <h4>Admin Dashboard</h4>
@@ -486,5 +486,16 @@
     <script src="js/plugins/smooth-scroll.min.js"></script>
     <script src="js/plugins/wow.js"></script>
     <script src="js/custom.js"></script>
+
+    <script>
+      $(function () {
+        $('.owl-carousel').owlCarousel({
+          autoplay: true,
+          autoplayTimeout: 3000,
+          loop: true,
+          // other options...
+        });
+      });
+    </script>
   </body>
 </html>
