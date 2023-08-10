@@ -29,6 +29,7 @@
 27. Contact style
 28. Button style
 29. Footer style
+30. Isotope style
 
 ------------------------------------------------------------------- */
 
@@ -1827,6 +1828,9 @@ input[type='checkbox'] {
   color: #18191d;
 }
 
+.portfolio-grid {
+}
+
 /* =======  Gallery style  ======= */
 .gallery-item {
   position: relative;
@@ -2999,4 +3003,9 @@ input[type='checkbox'] {
 
 .iconify:hover {
   filter: invert(1); /* Invert colors on hover, making it white */
+}
+
+/* 30. Isotope style */
+.isotope-highlighted {
+  border: 2px solid yellow; /* Example styling for highlight */
 }

@@ -22,7 +22,7 @@
 17. Reveal Effect
 18. Mouse Cursor
 19. Contact Form
-
+20. Isotope
 ------------------------------------------------------------------- */
 
 (function () {
@@ -197,7 +197,7 @@
     mouseDrag: true,
     autoplay: false,
     autoplayTimeout: 5000,
-    dots: false,
+    dots: true,
     autoplayHoverPause: true,
     nav: false,
     navText: [
@@ -633,12 +633,35 @@ $(function () {
 });
 
 //Passes a footer to each html with <passFooter></passFooter>
+var prioritizedCategory = ''; // Variable to store the category that's currently prioritized
 
-$(function () {
-  $('.owl-carousel').owlCarousel({
-    autoplay: true,
-    autoplayTimeout: 3000, //3 seconds, adjust as needed
-    loop: true,
-    // any other options you want to add
+// Initialize Isotope
+var $grid = $('.portfolio-grid').isotope({
+  itemSelector: '.col-md-4',
+  layoutMode: 'fitRows',
+  getSortData: {
+    category: function (itemElem) {
+      var categoryValue = $(itemElem).attr('data-category');
+      return categoryValue === prioritizedCategory ? -1 : 0;
+    },
+    sortValue: '[data-sort] parseInt',
+  },
+  sortBy: ['sortValue'],
+});
+
+// Dropdown change event
+$('.sort-by-dropdown').on('change', function () {
+  console.log('Dropdown changed');
+
+  prioritizedCategory = $(this).val();
+  console.log('Setting prioritized category to:', prioritizedCategory);
+
+  $grid.isotope('updateSortData').isotope({
+    sortBy: ['category', 'sortValue'],
   });
+});
+
+// Isotope arrange complete event (for debugging)
+$grid.on('arrangeComplete', function (event, filteredItems) {
+  console.log('Isotope arrange completed with', filteredItems.length, 'items');
 });
