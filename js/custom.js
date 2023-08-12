@@ -178,15 +178,15 @@
     });
 
   // Background Image
-  var pageSection = $('.bg-img, section');
-  pageSection.each(function (indx) {
-    if ($(this).attr('data-background')) {
-      $(this).css(
-        'background-image',
-        'url(' + $(this).data('background') + ')'
-      );
-    }
-  });
+  // var pageSection = $('.bg-img, section');
+  // pageSection.each(function (indx) {
+  //   if ($(this).attr('data-background')) {
+  //     $(this).css(
+  //       'background-image',
+  //       'url(' + $(this).data('background') + ')'
+  //     );
+  //   }
+  // });
 
   // Services owlCarousel
   $('.services .owl-carousel').owlCarousel({
@@ -272,57 +272,57 @@
   });
 
   // Clients owlCarousel
-  $('.clients .owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    mouseDrag: true,
-    autoplay: true,
-    dots: false,
-    nav: false,
-    navText: [
-      '<i class="ti-arrow-left" aria-hidden="true"></i>',
-      '<i class="ti-arrow-right" aria-hidden="true"></i>',
-    ],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        margin: 10,
-        items: 2,
-      },
-      600: {
-        items: 3,
-      },
-      1000: {
-        items: 4,
-      },
-    },
-  });
+  // $('.clients .owl-carousel').owlCarousel({
+  //   loop: true,
+  //   margin: 10,
+  //   mouseDrag: true,
+  //   autoplay: true,
+  //   dots: false,
+  //   nav: false,
+  //   navText: [
+  //     '<i class="ti-arrow-left" aria-hidden="true"></i>',
+  //     '<i class="ti-arrow-right" aria-hidden="true"></i>',
+  //   ],
+  //   responsiveClass: true,
+  //   responsive: {
+  //     0: {
+  //       margin: 10,
+  //       items: 2,
+  //     },
+  //     600: {
+  //       items: 3,
+  //     },
+  //     1000: {
+  //       items: 4,
+  //     },
+  //   },
+  // });
 
-  // Testimonials owlCarousel
-  $('.testimonials .owl-carousel').owlCarousel({
-    loop: true,
-    margin: 30,
-    mouseDrag: true,
-    autoplay: false,
-    dots: false,
-    nav: false,
-    navText: [
-      "<span class='lnr ti-angle-left'></span>",
-      "<span class='lnr ti-angle-right'></span>",
-    ],
-    responsiveClass: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      },
-    },
-  });
+  // // Testimonials owlCarousel
+  // $('.testimonials .owl-carousel').owlCarousel({
+  //   loop: true,
+  //   margin: 30,
+  //   mouseDrag: true,
+  //   autoplay: false,
+  //   dots: false,
+  //   nav: false,
+  //   navText: [
+  //     "<span class='lnr ti-angle-left'></span>",
+  //     "<span class='lnr ti-angle-right'></span>",
+  //   ],
+  //   responsiveClass: true,
+  //   responsive: {
+  //     0: {
+  //       items: 1,
+  //     },
+  //     600: {
+  //       items: 1,
+  //     },
+  //     1000: {
+  //       items: 1,
+  //     },
+  //   },
+  // });
 
   // MagnificPopup
   $('.img-zoom').magnificPopup({
@@ -625,14 +625,6 @@
   });
 })();
 
-//Passes a dadjokes to each html with <dadJokes></dadJokes>
-$(function () {
-  $('passNavbar').load('components/navbar.html');
-  $('#passDadJokes').load('components/dadjokes.html');
-  $('passFooter').load('components/footer.html');
-});
-
-//Passes a footer to each html with <passFooter></passFooter>
 var prioritizedCategory = ''; // Variable to store the category that's currently prioritized
 
 // Initialize Isotope
@@ -665,3 +657,178 @@ $('.sort-by-dropdown').on('change', function () {
 $grid.on('arrangeComplete', function (event, filteredItems) {
   console.log('Isotope arrange completed with', filteredItems.length, 'items');
 });
+
+function setEqualHeightOwlItems() {
+  var maxHeight = 0;
+
+  // Only target the carousel with the class "my-targeted-carousel"
+  $('.same-height-carousel .owl-item').each(function () {
+    var thisHeight = $(this).height();
+    if (thisHeight > maxHeight) {
+      maxHeight = thisHeight;
+    }
+  });
+
+  $('.same-height-carousel .owl-item').height(maxHeight);
+}
+
+$(function () {
+  setEqualHeightOwlItems();
+  $(window).on('resize', setEqualHeightOwlItems);
+});
+
+// $(function () {
+//   $('passNavbar').load('components/navbar.html');
+//   $('passDadJokes').load('components/dadjokes.html');
+//   $('passFooter').load('components/footer.html');
+// });
+
+// function loadComponent(selector, url) {
+//   return new Promise((resolve, reject) => {
+//     $(selector).load(url, function (response, status) {
+//       if (status === 'error') {
+//         reject(new Error('Failed to load ' + url));
+//       } else {
+//         resolve();
+//       }
+//     });
+//   });
+// }
+
+// Promise.all([
+//   loadComponent('passNavbar', 'components/navbar.html'),
+//   loadComponent('passDadJokes', 'components/dadjokes.html'),
+//   loadComponent('passFooter', 'components/footer.html'),
+// ])
+//   .then(() => {
+//     // All components are loaded
+
+//     // Initialize Owl Carousel
+//     $('.owl-carousel').owlCarousel({
+//       // Owl carousel settings here
+//     });
+
+//     // Initialize other plugins like Magnific Popup
+//     $('.popup-link').magnificPopup();
+
+//     // Add other plugin initializations and custom script code here
+//   })
+//   .catch((error) => {
+//     console.error('Error loading components:', error);
+//   });
+
+function loadNavbar() {
+  return new Promise((resolve, reject) => {
+    $('passNavbar').load('components/navbar.html', function (response, status) {
+      if (status === 'success') {
+        resolve();
+      } else {
+        reject(new Error('Failed to load navbar'));
+      }
+    });
+  });
+}
+
+function loadDadJokes() {
+  return new Promise((resolve, reject) => {
+    $('passDadJokes').load(
+      'components/dadjokes.html',
+      function (response, status) {
+        if (status === 'success') {
+          resolve();
+        } else {
+          reject(new Error('Failed to load dadjokes'));
+        }
+      }
+    );
+  });
+}
+
+function loadFooter() {
+  return new Promise((resolve, reject) => {
+    $('passFooter').load('components/footer.html', function (response, status) {
+      if (status === 'success') {
+        resolve();
+      } else {
+        reject(new Error('Failed to load footer'));
+      }
+    });
+  });
+}
+
+loadNavbar()
+  .then(loadDadJokes)
+  .then(loadFooter)
+  .then(() => {
+    // Initialize your plugins or other components here
+    // Background Image
+    var pageSection = $('.bg-img, section');
+    pageSection.each(function (indx) {
+      if ($(this).attr('data-background')) {
+        $(this).css(
+          'background-image',
+          'url(' + $(this).data('background') + ')'
+        );
+      }
+    });
+    // Testimonials owlCarousel
+    $('.testimonials .owl-carousel').owlCarousel({
+      loop: true,
+      margin: 30,
+      mouseDrag: true,
+      autoplay: false,
+      dots: false,
+      nav: false,
+      navText: [
+        "<span class='lnr ti-angle-left'></span>",
+        "<span class='lnr ti-angle-right'></span>",
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+        },
+        600: {
+          items: 1,
+        },
+        1000: {
+          items: 1,
+        },
+      },
+    });
+    // Clients owlCarousel
+    $('.clients .owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      mouseDrag: true,
+      autoplay: true,
+      dots: false,
+      nav: false,
+      navText: [
+        '<i class="ti-arrow-left" aria-hidden="true"></i>',
+        '<i class="ti-arrow-right" aria-hidden="true"></i>',
+      ],
+      responsiveClass: true,
+      responsive: {
+        0: {
+          margin: 10,
+          items: 2,
+        },
+        600: {
+          items: 3,
+        },
+        1000: {
+          items: 4,
+        },
+      },
+    });
+
+    $('.popup-link').magnificPopup();
+    $('a.vid').YouTubePopUp();
+    new WOW().init();
+    var scroll = new SmoothScroll('a[href*="#"]');
+    var $grid = $('.grid').isotope();
+  })
+  .catch((error) => {
+    console.error('Error loading components:', error);
+  });
