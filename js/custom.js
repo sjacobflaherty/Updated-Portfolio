@@ -23,6 +23,7 @@
 18. Mouse Cursor
 19. Contact Form
 20. Isotope
+21. Dad Jokes
 ------------------------------------------------------------------- */
 
 (function () {
@@ -669,6 +670,8 @@
   });
 })();
 
+/* Isotope and highlights */
+
 var prioritizedCategory = ''; // Variable to store the category that's currently prioritized
 
 // Initialize Isotope
@@ -689,15 +692,23 @@ var $grid = $('.portfolio-grid').isotope({
 $('.sort-by-dropdown').on('change', function () {
   console.log('Dropdown changed');
 
+  // Remove highlight class from all items
+  $grid.find('.col-md-4').removeClass('isotope-highlighted');
+
   prioritizedCategory = $(this).val();
-  console.log('Setting prioritized category to:', prioritizedCategory);
+  console.log('Setting prioritized category to:', prioritizedCategory); //debugging
+
+  // Add highlight class to the items that match the prioritizedCategory
+  $grid
+    .find('.col-md-4[data-category="' + prioritizedCategory + '"]')
+    .addClass('isotope-highlighted');
 
   $grid.isotope('updateSortData').isotope({
     sortBy: ['category', 'sortValue'],
   });
 });
 
-// Isotope arrange complete event (for debugging)
+//debugging
 $grid.on('arrangeComplete', function (event, filteredItems) {
   console.log('Isotope arrange completed with', filteredItems.length, 'items');
 });
@@ -721,45 +732,21 @@ $(function () {
   $(window).on('resize', setEqualHeightOwlItems);
 });
 
-// $(function () {
-//   $('passNavbar').load('components/navbar.html');
-//   $('passDadJokes').load('components/dadjokes.html');
-//   $('passFooter').load('components/footer.html');
-// });
+/* Dad Jokes */
+const dadJokes = [
+  'Why don’t scientists trust atoms? Because they make up everything!',
+  'Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.',
+  'Why did we tell the computer to go to bed? It had too many windows open.',
+  'Want to hear something terrible? Paper. See? I told you it was tearable.',
+  //... add as many jokes as you want
+];
 
-// function loadComponent(selector, url) {
-//   return new Promise((resolve, reject) => {
-//     $(selector).load(url, function (response, status) {
-//       if (status === 'error') {
-//         reject(new Error('Failed to load ' + url));
-//       } else {
-//         resolve();
-//       }
-//     });
-//   });
-// }
+function getRandomJoke() {
+  const randomIndex = Math.floor(Math.random() * dadJokes.length);
+  return dadJokes[randomIndex];
+}
 
-// Promise.all([
-//   loadComponent('passNavbar', 'components/navbar.html'),
-//   loadComponent('passDadJokes', 'components/dadjokes.html'),
-//   loadComponent('passFooter', 'components/footer.html'),
-// ])
-//   .then(() => {
-//     // All components are loaded
-
-//     // Initialize Owl Carousel
-//     $('.owl-carousel').owlCarousel({
-//       // Owl carousel settings here
-//     });
-
-//     // Initialize other plugins like Magnific Popup
-//     $('.popup-link').magnificPopup();
-
-//     // Add other plugin initializations and custom script code here
-//   })
-//   .catch((error) => {
-//     console.error('Error loading components:', error);
-//   });
+/* Pass headers and script necessary to delay javascript until html injection */
 
 function loadNavbar() {
   return new Promise((resolve, reject) => {
@@ -773,18 +760,48 @@ function loadNavbar() {
   });
 }
 
+// function loadDadJokes() {
+//   return new Promise((resolve, reject) => {
+//     $.get('components/dadjokes.html', function (data) {
+//       // 'data' is the content of the dadjokes.html file as a string
+
+//       // Create a temporary div to parse the HTML string
+//       const tempDiv = $('<div>').html(data);
+
+//       // Find each paragraph in the .item div within the temporary div and set its text
+//       tempDiv.find('.owl-carousel .item p').each(function () {
+//         $(this).text(getRandomJoke());
+//       });
+
+//       // Now insert the modified content into <passDadJokes>
+//       $('passDadJokes').html(tempDiv.html());
+
+//       resolve();
+//     }).fail(function () {
+//       reject(new Error('Failed to load dadjokes'));
+//     });
+//   });
+// }
+
 function loadDadJokes() {
   return new Promise((resolve, reject) => {
-    $('passDadJokes').load(
-      'components/dadjokes.html',
-      function (response, status) {
-        if (status === 'success') {
-          resolve();
-        } else {
-          reject(new Error('Failed to load dadjokes'));
-        }
-      }
-    );
+    $.get('components/dadjokes.html', function (data) {
+      // 'data' is the content of the dadjokes.html file as a string
+
+      // Create a temporary div to parse the HTML string
+      const tempDiv = $('<div>').html(data);
+
+      // Find the paragraph in the temporary div and set its text
+      const jokeParagraph = tempDiv.find('.testimonials-box .item p');
+      jokeParagraph.text(getRandomJoke());
+
+      // Now insert the modified content into <passDadJokes>
+      $('passDadJokes').html(tempDiv.html());
+
+      resolve();
+    }).fail(function () {
+      reject(new Error('Failed to load dadjokes'));
+    });
   });
 }
 
@@ -800,79 +817,81 @@ function loadFooter() {
   });
 }
 
-loadNavbar()
-  .then(loadDadJokes)
-  .then(loadFooter)
-  .then(() => {
-    // Initialize your plugins or other components here
-    // Background Image
-    var pageSection = $('.bg-img, section');
-    pageSection.each(function (indx) {
-      if ($(this).attr('data-background')) {
-        $(this).css(
-          'background-image',
-          'url(' + $(this).data('background') + ')'
-        );
-      }
-    });
-    // Testimonials owlCarousel
-    $('.testimonials .owl-carousel').owlCarousel({
-      loop: true,
-      margin: 30,
-      mouseDrag: true,
-      autoplay: false,
-      dots: false,
-      nav: false,
-      navText: [
-        "<span class='lnr ti-angle-left'></span>",
-        "<span class='lnr ti-angle-right'></span>",
-      ],
-      responsiveClass: true,
-      responsive: {
-        0: {
-          items: 1,
+$(function () {
+  loadNavbar()
+    .then(loadDadJokes)
+    .then(loadFooter)
+    .then(() => {
+      // Initialize your plugins or other components here
+      // Background Image
+      var pageSection = $('.bg-img, section');
+      pageSection.each(function (indx) {
+        if ($(this).attr('data-background')) {
+          $(this).css(
+            'background-image',
+            'url(' + $(this).data('background') + ')'
+          );
+        }
+      });
+      // Testimonials owlCarousel
+      $('.testimonials .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 30,
+        mouseDrag: true,
+        autoplay: false,
+        dots: false,
+        nav: false,
+        navText: [
+          "<span class='lnr ti-angle-left'></span>",
+          "<span class='lnr ti-angle-right'></span>",
+        ],
+        responsiveClass: true,
+        responsive: {
+          0: {
+            items: 1,
+          },
+          600: {
+            items: 1,
+          },
+          1000: {
+            items: 1,
+          },
         },
-        600: {
-          items: 1,
+      });
+      // Clients owlCarousel
+      $('.clients .owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        mouseDrag: true,
+        autoplay: true,
+        dots: false,
+        nav: false,
+        navText: [
+          '<i class="ti-arrow-left" aria-hidden="true"></i>',
+          '<i class="ti-arrow-right" aria-hidden="true"></i>',
+        ],
+        responsiveClass: true,
+        responsive: {
+          0: {
+            margin: 10,
+            items: 2,
+          },
+          600: {
+            items: 3,
+          },
+          1000: {
+            items: 4,
+          },
         },
-        1000: {
-          items: 1,
-        },
-      },
-    });
-    // Clients owlCarousel
-    $('.clients .owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      mouseDrag: true,
-      autoplay: true,
-      dots: false,
-      nav: false,
-      navText: [
-        '<i class="ti-arrow-left" aria-hidden="true"></i>',
-        '<i class="ti-arrow-right" aria-hidden="true"></i>',
-      ],
-      responsiveClass: true,
-      responsive: {
-        0: {
-          margin: 10,
-          items: 2,
-        },
-        600: {
-          items: 3,
-        },
-        1000: {
-          items: 4,
-        },
-      },
-    });
+      });
 
-    $('.popup-link').magnificPopup();
-    $('a.vid').YouTubePopUp();
-    new WOW().init();
-    var scroll = new SmoothScroll('a[href*="#"]');
-    var $grid = $('.grid').isotope();
-  })
-  .catch((error) => {
-    console.error('Error loading components:', error);
-  });
+      $('.popup-link').magnificPopup();
+      $('a.vid').YouTubePopUp();
+      new WOW().init();
+      var scroll = new SmoothScroll('a[href*="#"]');
+      var $grid = $('.grid').isotope();
+    })
+    .catch((error) => {
+      console.error('Error loading components:', error);
+    });
+});

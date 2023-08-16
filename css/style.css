@@ -2160,7 +2160,7 @@ input[type='checkbox'] {
 .testimonials .testimonials-box {
   position: relative;
   background: #fff;
-  padding: 60px 45px;
+  padding: 50px 35px;
   margin-bottom: -60px;
 }
 .testimonials .testimonials-box h5 {
@@ -3099,8 +3099,8 @@ input[type='checkbox'] {
 }
 
 /* 30. Isotope style */
-.isotope-highlighted {
-  border: 2px solid yellow; /* Example styling for highlight */
+.isotope-highlighted img {
+  border: 6px solid #0d6efd;
 }
 
 .header-container {
