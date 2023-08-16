@@ -652,7 +652,7 @@ input[type='checkbox'] {
 
 /* ======= Header Navigation style ======= */
 .nilsbrown-header {
-  height: 75px;
+  height: 80px;
   padding: 20px;
   position: relative;
   top: 0;
@@ -823,13 +823,14 @@ input[type='checkbox'] {
 
 /* @media (max-width: 991px) {
   .nilsbrown-menu {
-    display: none; 
+    display: none;
   }
   .nilsbrown-menu.active {
-    display: block; 
-}
+    display: block;
+  }
+} */
 
-@media (min-width: 992px) {
+/* @media (min-width: 992px) {
   .nilsbrown-menu {
     position: static;
     width: auto;
@@ -848,8 +849,8 @@ input[type='checkbox'] {
     opacity: 1;
     visibility: visible;
   }
-}
- */
+} */
+
 /* ======= Homepage style ======= */
 .header-section {
   padding-top: 0px;
@@ -1512,7 +1513,7 @@ input[type='checkbox'] {
 
 /* ======= Section style ======= */
 .section-padding {
-  padding: 120px 0;
+  padding: 80px 0;
 }
 .section-padding h1 {
   font-size: 60px;
@@ -2924,8 +2925,12 @@ input[type='checkbox'] {
   .nilsbrown-header {
     background: #fff;
     margin-bottom: 30px;
-    padding: 25px 0px;
+    padding: 20px;
   }
+  .col-md-12 {
+    padding-top: 20px;
+  }
+
   .nilsbrown-header h1 {
     font-size: 40px;
     color: #18191d;
@@ -3096,4 +3101,8 @@ input[type='checkbox'] {
 /* 30. Isotope style */
 .isotope-highlighted {
   border: 2px solid yellow; /* Example styling for highlight */
+}
+
+.header-container {
+  height: 80px; /* This height matches the initial height of .nilsbrown-header */
 }
