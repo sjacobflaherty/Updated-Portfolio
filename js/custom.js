@@ -734,11 +734,18 @@ $(function () {
 
 /* Dad Jokes */
 const dadJokes = [
-  'Why don’t scientists trust atoms? Because they make up everything!',
-  'Hear about the new restaurant called Karma? There’s no menu: You get what you deserve.',
-  'Why did we tell the computer to go to bed? It had too many windows open.',
-  'Want to hear something terrible? Paper. See? I told you it was tearable.',
-  //... add as many jokes as you want
+  'My wife forgot the code to her luggage, but I managed to figure it out. You can say... I solved the case.',
+  '6:30 is my favorite time of day, hands down.',
+  'I love my furniture. My recliner and I go way back.',
+  'You know Orion’s Belt? Big waist of space, huh?\n\nDidn’t like that joke? That’s okay...it’s only got 3 stars',
+  'You know why you never see an elephant hiding in a tree? Because they’re very good at it.',
+  'Are you feeling cold? Sit in the corner, it is 90 degrees.',
+  'I invented a new word today: Plagiarism!',
+  'I tell dad jokes. Sometimes he laughs.',
+  'I tell dad jokes. Sometimes he laughs.',
+  'I tell dad jokes. Sometimes he laughs.',
+  'I tell dad jokes. Sometimes he laughs.',
+  'I tell dad jokes. Sometimes he laughs.',
 ];
 
 function getRandomJoke() {
