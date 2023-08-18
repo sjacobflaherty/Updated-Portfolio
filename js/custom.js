@@ -741,10 +741,10 @@ const dadJokes = [
   'You know why you never see an elephant hiding in a tree? Because they’re very good at it.',
   'Are you feeling cold? Sit in the corner, it is 90 degrees.',
   'I invented a new word today: Plagiarism!',
-  'I tell dad jokes. Sometimes he laughs.',
-  'I tell dad jokes. Sometimes he laughs.',
-  'I tell dad jokes. Sometimes he laughs.',
-  'I tell dad jokes. Sometimes he laughs.',
+  'What’s blue and not very heavy? Light blue.',
+  'I am terrified of lifts. I’m going to take steps to avoid them',
+  'I used to be addicted to soap, but I’m clean now.',
+  'I like bad puns. It’s how eye role.',
   'I tell dad jokes. Sometimes he laughs.',
 ];
 
