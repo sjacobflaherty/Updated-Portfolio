@@ -80,14 +80,14 @@
     if (st > 150) {
       if (!navbar.hasClass('scrolled')) {
         navbar.addClass('scrolled');
-        logo.attr('src', 'images/logo-dark.png');
+        logo.attr('src', 'images/jacobFlaherty_favicon.png');
         updateHeaderContainerHeight();
       }
     }
     if (st < 150) {
       if (navbar.hasClass('scrolled')) {
         navbar.removeClass('scrolled sleep');
-        logo.attr('src', 'images/logo-dark.png');
+        logo.attr('src', 'images/jacobFlaherty_favicon.png');
         updateHeaderContainerHeight();
       }
     }

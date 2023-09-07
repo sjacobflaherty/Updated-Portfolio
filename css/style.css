@@ -296,11 +296,25 @@ input[type='checkbox'] {
 }
 .bg-fixed {
   background-attachment: fixed;
+  z-index: 1;
 }
 .bg-img {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+/* .bg-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: 2;
+}
+ */
 .bg-img-position-top {
   background-position: top;
 }
@@ -593,7 +607,7 @@ input[type='checkbox'] {
 }
 .logo-wrap {
   position: relative;
-  z-index: 1021;
+  z-index: 1;
 }
 .nilsbrown-menu ul li ul {
   position: relative;
@@ -662,7 +676,9 @@ input[type='checkbox'] {
   background: transparent;
 }
 .nilsbrown-header .logo img {
-  width: 170px;
+  max-width: 7%; /* Ensures image doesn't exceed the width of its container */
+  height: auto;
+  position: relative;
 }
 .nilsbrown-header h1 {
   position: relative;
@@ -2995,6 +3011,7 @@ input[type='checkbox'] {
   .header-img {
     width: 60%;
     margin-top: 40px;
+    background-color: #d0d1d5;
   }
   .header-img-left {
     float: left;
