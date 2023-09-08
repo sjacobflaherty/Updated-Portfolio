@@ -104,36 +104,6 @@
     }
   });
 
-  // OnePageNav();
-  // $(window).scroll(function () {
-  //   var $this = $(this),
-  //     st = $this.scrollTop(),
-  //     navbar = $('.nilsbrown-header'),
-  //     logo = $('.nilsbrown-header .logo> img');
-  //   if (st > 150) {
-  //     if (!navbar.hasClass('scrolled')) {
-  //       navbar.addClass('scrolled');
-  //       logo.attr('src', 'images/logo-dark.png');
-  //     }
-  //   }
-  //   if (st < 150) {
-  //     if (navbar.hasClass('scrolled')) {
-  //       navbar.removeClass('scrolled sleep');
-  //       logo.attr('src', 'images/logo-dark.png');
-  //     }
-  //   }
-  //   if (st > 350) {
-  //     if (!navbar.hasClass('awake')) {
-  //       navbar.addClass('awake');
-  //     }
-  //   }
-  //   if (st < 350) {
-  //     if (navbar.hasClass('awake')) {
-  //       navbar.removeClass('awake');
-  //       navbar.addClass('sleep');
-  //     }
-  //   }
-  // });
   $('.nilsbrown-js-nav-toggle').on('click', function (e) {
     var $this = $(this);
     e.preventDefault();
@@ -746,6 +716,10 @@ const dadJokes = [
   'I used to be addicted to soap, but I’m clean now.',
   'I like bad puns. It’s how eye role.',
   'I tell dad jokes. Sometimes he laughs.',
+  'I keep all my dad jokes in a dad-a-base.',
+  'What’s the difference between in-laws and outlaws? Outlaws are wanted.',
+  'What do you call a book club that’s stuck on one book? Church.',
+  'I ordered a chicken and an egg on Amazon the other day. I’ll let you know.',
 ];
 
 function getRandomJoke() {
