@@ -581,7 +581,7 @@ input[type='checkbox'] {
   -o-transition: 0.1s all ease;
   transition: 0.1s all ease;
   margin: 0 40px;
-  padding: 10px 15px;
+  padding: 15px 20px;
 }
 .nilsbrown-menu ul > li.is-show {
   visibility: visible;
@@ -590,10 +590,17 @@ input[type='checkbox'] {
 }
 .nilsbrown-menu ul > li a {
   color: #18191d;
-  font-size: 18px;
+  font-size: 28px;
   font-family: 'Syne', sans-serif;
   font-weight: 700;
 }
+
+@media screen and (max-width: 1367px) {
+  .nilsbrown-menu ul > li a {
+    font-size: 28px;
+  }
+}
+
 .nilsbrown-menu ul > li a:hover {
   color: #18191d;
 }
@@ -679,8 +686,14 @@ input[type='checkbox'] {
   max-width: 7%; /* Ensures image doesn't exceed the width of its container */
   height: auto;
   position: relative;
-  min-width: 30px;
+  min-width: 50px;
 }
+@media (max-width: 991px) {
+  nilsbrown-header .logo img {
+    min-width: 30px;
+  }
+}
+
 .nilsbrown-header h1 {
   position: relative;
   font-size: 40px;
@@ -933,6 +946,7 @@ input[type='checkbox'] {
 }
 .header-img {
   width: 100%;
+  background-color: #d0d1d5;
 }
 
 /* ======= Homepage Image Animation style ======= */
@@ -2181,29 +2195,46 @@ input[type='checkbox'] {
   font-family: 'Syne', sans-serif;
   color: #fff;
 }
+
 .testimonials .testimonials-box {
   position: relative;
   background: #fff;
-  padding: 50px 35px;
+  padding: 50px 35px 30px;
   margin-bottom: -60px;
+  min-height: 110%;
 }
+
+/* @media screen and (max-width: 480px) {
+  .testimonials .testimonials-box {
+    max-height: 80%;
+  }
+} */
+
 .testimonials .testimonials-box h5 {
   font-size: 24px;
   color: #18191d;
 }
 .testimonials .item {
   position: relative;
+  margin-bottom: 5px;
+  min-height: 100%;
 }
 .testimonials .item .quote {
-  position: absolute;
-  right: 15px;
-  bottom: 0px;
-  width: 70px;
-  margin: 0 auto 0px;
+  right: 0px;
+  bottom: 5px;
+  height: auto;
+  margin: 10 auto 0px;
   opacity: 0.2;
 }
+.testimonials .item .quote img {
+  width: 15% !important;
+  margin-left: auto;
+  margin-top: 20px;
+}
+
 .testimonials .item p {
   color: #868a9b;
+  margin: 0px;
 }
 .testimonials .item .info {
   text-align: left;
@@ -2247,6 +2278,17 @@ input[type='checkbox'] {
 .clients .clients-logo {
   opacity: 1;
   line-height: 0;
+}
+
+.clients .clients-logo img {
+  opacity: 1;
+  line-height: 0;
+  max-width: 50%;
+}
+@media screen and (max-width: 480px) {
+  .clients .clients-logo img {
+    max-width: 80%;
+  }
 }
 .clients .clients-logo:hover {
   opacity: 1;
@@ -2996,6 +3038,7 @@ input[type='checkbox'] {
   .testimonials .testimonials-box {
     padding: 40px 20px;
     margin-bottom: 15px;
+    min-height: 0px;
   }
   .accordion-box .block .acc-btn {
     padding: 15px 15px;
@@ -3026,7 +3069,6 @@ input[type='checkbox'] {
   .header-img {
     width: 60%;
     margin-top: 40px;
-    background-color: #d0d1d5;
   }
   .header-img-left {
     float: left;
