@@ -2708,6 +2708,28 @@ input[type='checkbox'] {
   color: #868a9b;
 }
 
+@media screen and (max-width: 1025px) {
+  .nex-prv {
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .nex-prv .prv h5,
+  .nex-prv .prv h5 a,
+  .nex-prv .nxt h5,
+  .nex-prv .nxt h5 a,
+  .nex-prv .prv span,
+  .nex-prv .prv span a,
+  .nex-prv .nxt span,
+  .nex-prv .nxt span a {
+    color: #fff;
+  }
+  .nex-prv .nxt .img:after,
+  .nex-prv .prv .img:after {
+    opacity: 0;
+  }
+}
+
 .nex-prv .prv:hover h5,
 .nex-prv .prv:hover h5 a,
 .nex-prv .nxt:hover h5,
