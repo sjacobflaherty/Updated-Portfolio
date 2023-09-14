@@ -646,7 +646,7 @@ var prioritizedCategory = ''; // Variable to store the category that's currently
 
 // Initialize Isotope
 var $grid = $('.portfolio-grid').isotope({
-  itemSelector: '.col-md-4',
+  itemSelector: '.portfolio-item',
   layoutMode: 'fitRows',
   getSortData: {
     category: function (itemElem) {
@@ -663,14 +663,14 @@ $('.sort-by-dropdown').on('change', function () {
   console.log('Dropdown changed');
 
   // Remove highlight class from all items
-  $grid.find('.col-md-4').removeClass('isotope-highlighted');
+  $grid.find('.portfolio-item').removeClass('isotope-highlighted');
 
   prioritizedCategory = $(this).val();
   console.log('Setting prioritized category to:', prioritizedCategory); //debugging
 
   // Add highlight class to the items that match the prioritizedCategory
   $grid
-    .find('.col-md-4[data-category="' + prioritizedCategory + '"]')
+    .find('.portfolio-item[data-category="' + prioritizedCategory + '"]')
     .addClass('isotope-highlighted');
 
   $grid.isotope('updateSortData').isotope({
