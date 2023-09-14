@@ -1775,10 +1775,10 @@ input[type='checkbox'] {
     width: 85%;
   }
 }
-
+/* padding: 60px 40px 90px 40px; */
 /* ======= Services style ======= */
 .services .item {
-  padding: 60px 40px 90px 40px;
+  padding: 60px 40px 80px 40px;
   background-color: #fff;
   position: relative;
   -webkit-transition: all 0.5s;
@@ -1786,7 +1786,7 @@ input[type='checkbox'] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+  height: 90%;
 }
 .services .item:hover {
   border-color: transparent;
