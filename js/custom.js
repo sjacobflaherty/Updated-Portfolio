@@ -855,7 +855,7 @@ $(function () {
         responsive: {
           0: {
             margin: 10,
-            items: 2,
+            items: 3,
           },
           600: {
             items: 3,

@@ -2284,7 +2284,10 @@ input[type='checkbox'] {
 }
 @media screen and (max-width: 480px) {
   .clients .clients-logo img {
-    max-width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
 }
 .clients .clients-logo:hover {
