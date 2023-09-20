@@ -346,7 +346,7 @@
     mainClass: 'mfp-fade',
     gallery: {
       enabled: !0,
-      navigateByImgClick: !0,
+      navigateByImgClick: false,
       preload: [0, 1],
     },
   });
@@ -720,6 +720,8 @@ const dadJokes = [
   'What’s the difference between in-laws and outlaws? Outlaws are wanted.',
   'What do you call a book club that’s stuck on one book? Church.',
   'I ordered a chicken and an egg on Amazon the other day. I’ll let you know.',
+  'My son asked why Star Wars movies came out 4, 5, 6, 1, 2, 3… I answered in my best yoda impersonation: ‘in charge of scheduling, I was’',
+  'I am Buzz Aldrin. Second man to step on the moon... Neil before me.',
 ];
 
 function getRandomJoke() {

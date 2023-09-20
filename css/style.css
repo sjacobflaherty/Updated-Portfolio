@@ -1893,6 +1893,10 @@ input[type='checkbox'] {
 .portfolio-page p span {
   color: #18191d;
 }
+.portfolio-page p a {
+  text-decoration: underline;
+}
+
 .portfolio-page p a:hover {
   color: #3a3a3a;
 }
@@ -2739,7 +2743,7 @@ input[type='checkbox'] {
   }
 }
 
-.nex-prv .prv:hover h5,
+/* .nex-prv .prv:hover h5,
 .nex-prv .prv:hover h5 a,
 .nex-prv .prv:hover h5 p,
 .nex-prv .nxt:hover h5,
@@ -2752,7 +2756,7 @@ input[type='checkbox'] {
 .nex-prv .nxt:hover span a,
 .nex-prv .nxt:hover span p {
   color: #fff;
-}
+} */
 
 .nex-prv .nxt .img,
 .nex-prv .prv .img {
@@ -2820,6 +2824,7 @@ input[type='checkbox'] {
   /* display: inline-block; */
   margin: 0; /* to remove default margins from the paragraph */
   vertical-align: middle; /* to vertically align them in case they have different heights */
+  color: #fff;
 }
 
 /* ======= Contact style ======= */
