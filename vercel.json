@@ -1,11 +1,19 @@
 {
   "rewrites": [
     { "source": "/home", "destination": "index.html" },
+
     { "source": "/portfolio", "destination": "/portfolio.html" },
+
     {
       "source": "/admin-dashboard",
       "destination": "/projectAdminDashboard.html"
     },
+
+    {
+      "source": "/vertigo-internship",
+      "destination": "/projectVertigoInternship.html"
+    },
+
     {
       "source": "/resume",
       "destination": "/components/Jacob-Flaherty-Resume-2023.pdf"
