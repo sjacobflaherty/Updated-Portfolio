@@ -1,6 +1,10 @@
 {
   "rewrites": [
-    { "source": "/main", "destination": "index.html" },
-    { "source": "/portfolio", "destination": "/portfolio.html" }
+    { "source": "/home", "destination": "index.html" },
+    { "source": "/resume", "destination": "/portfolio.html" },
+    {
+      "source": "/portfolio",
+      "destination": "/components/Jacob-Flaherty-Resume-2023.pdf"
+    }
   ]
 }

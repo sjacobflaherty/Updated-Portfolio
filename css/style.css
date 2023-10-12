@@ -821,7 +821,7 @@ input[type='checkbox'] {
   display: -moz-inline-stack;
   display: inline-block;
   zoom: 1;
-  *display: inline;
+  /* *display: inline; */
   width: 25px;
   height: 0px;
   top: 7px;
