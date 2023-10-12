@@ -15,6 +15,36 @@
     },
 
     {
+      "source": "/previous-portfolio",
+      "destination": "/projectPreviousPortfolio.html"
+    },
+
+    {
+      "source": "/car-sales",
+      "destination": "/projectCarRentals.html"
+    },
+
+    {
+      "source": "/space",
+      "destination": "/projectSpaceWebsite.html"
+    },
+
+    {
+      "source": "/python",
+      "destination": "/projectAdditionalPythonWork.html"
+    },
+
+    {
+      "source": "/csharp",
+      "destination": "/projectCSharpWork.html"
+    },
+
+    {
+      "source": "/extra-work",
+      "destination": "/projectAdditionalWork.html"
+    },
+
+    {
       "source": "/resume",
       "destination": "/components/Jacob-Flaherty-Resume-2023.pdf"
     }
